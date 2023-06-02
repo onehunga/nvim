@@ -1,5 +1,10 @@
 return {
 	'rebelot/kanagawa.nvim',
+	'Mofiqul/adwaita.nvim',
+	'bluz71/vim-moonfly-colors',
+	'Shatur/neovim-ayu',
+	'ellisonleao/gruvbox.nvim',
+
 	'neovim/nvim-lspconfig',
 	{
 		'williamboman/mason.nvim',
@@ -72,7 +77,7 @@ return {
 	{
 		'nvim-lualine/lualine.nvim',
 		config = function()
-			require 'user.lualine'
+			require 'user.lualine_evil'
 		end
 	},
 	{
@@ -90,10 +95,10 @@ return {
 		end
 	},
 	{
-		'https://github.com/folke/which-key.nvim.git',
+		'folke/which-key.nvim',
 		config = function()
 			local wk = require 'which-key'
 			wk.setup()
 		end
-	}
+	},
 }

@@ -26,8 +26,5 @@ vim.api.nvim_create_autocmd('BufEnter', {
 		vim.cmd [[ highlight WinSeparator guibg=NONE ]]
 	end
 })
-vim.cmd [[ colorscheme kanagawa-dragon ]]
--- vim.cmd [[ highlight WinSeparator guibg=none ]]
 
-vim.cmd [[ hi Normal guibg=NONE ]]
-vim.cmd [[ hi TelescopeBorder guibg=NONE ]]
+vim.cmd [[ colorscheme gruvbox ]]
