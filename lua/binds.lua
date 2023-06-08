@@ -21,6 +21,7 @@ bind('<leader>fw', ':Telescope live_grep<cr>')
 bind('<leader>b', ':Telescope buffers<cr>')
 bind('<C-f>', ':Telescope find_files<cr>')
 bind('<leader>g', '<cmd>lua _Lazygit_toggle()<cr>')
+bind('<leader>a', '<cmd>CodeActionMenu<cr>')
 
 function _Toggle_linewise()
 	require 'Comment.api'.toggle.linewise()

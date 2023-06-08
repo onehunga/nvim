@@ -101,4 +101,15 @@ return {
 			wk.setup()
 		end
 	},
+	{
+		'j-hui/fidget.nvim',
+		config = function()
+			require 'fidget'.setup {}
+		end
+	},
+	{
+		'weilbith/nvim-code-action-menu',
+		config = function()
+		end
+	}
 }
