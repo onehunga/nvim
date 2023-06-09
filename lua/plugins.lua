@@ -107,9 +107,11 @@ return {
 			require 'fidget'.setup {}
 		end
 	},
+	'weilbith/nvim-code-action-menu',
 	{
-		'weilbith/nvim-code-action-menu',
+		'xiyaowong/transparent.nvim',
 		config = function()
+			require 'transparent'.setup {}
 		end
 	}
 }
