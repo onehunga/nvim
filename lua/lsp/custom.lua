@@ -8,4 +8,6 @@ lspconfig.pylsp.setup {}
 
 lspconfig.rust_analyzer.setup {}
 
+lspconfig.ols.setup {}
+
 lspconfig.zls.setup {}
