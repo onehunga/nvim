@@ -113,5 +113,8 @@ return {
 		config = function()
 			require 'transparent'.setup {}
 		end
-	}
+	},
+
+	'ollykel/v-vim',
+	'Tetralux/odin.vim',
 }

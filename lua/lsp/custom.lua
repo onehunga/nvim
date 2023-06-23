@@ -10,4 +10,6 @@ lspconfig.rust_analyzer.setup {}
 
 lspconfig.ols.setup {}
 
+lspconfig.vls.setup {}
+
 lspconfig.zls.setup {}
