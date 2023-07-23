@@ -5,7 +5,6 @@ local luasnip = require 'luasnip'
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
---[[
 local kind_icons = {
 	Text = "",
 	Method = "",
@@ -33,35 +32,34 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = "",
 }
---]]
 
-local kind_icons = {
-	Text = '  ',
-	Method = '  ',
-	Function = '  ',
-	Constructor = '  ',
-	Field = '  ',
-	Variable = '  ',
-	Class = '  ',
-	Interface = '  ',
-	Module = '  ',
-	Property = '  ',
-	Unit = '  ',
-	Value = '  ',
-	Enum = '  ',
-	Keyword = '  ',
-	Snippet = '  ',
-	Color = '  ',
-	File = '  ',
-	Reference = '  ',
-	Folder = '  ',
-	EnumMember = '  ',
-	Constant = '  ',
-	Struct = '  ',
-	Event = '  ',
-	Operator = '  ',
-	TypeParameter = '  ',
-}
+-- local kind_icons = {
+-- 	Text = '  ',
+-- 	Method = '  ',
+-- 	Function = '  ',
+-- 	Constructor = '  ',
+-- 	Field = '  ',
+-- 	Variable = '  ',
+-- 	Class = '  ',
+-- 	Interface = '  ',
+-- 	Module = '  ',
+-- 	Property = '  ',
+-- 	Unit = '  ',
+-- 	Value = '  ',
+-- 	Enum = '  ',
+-- 	Keyword = '  ',
+-- 	Snippet = '  ',
+-- 	Color = '  ',
+-- 	File = '  ',
+-- 	Reference = '  ',
+-- 	Folder = '  ',
+-- 	EnumMember = '  ',
+-- 	Constant = '  ',
+-- 	Struct = '  ',
+-- 	Event = '  ',
+-- 	Operator = '  ',
+-- 	TypeParameter = '  ',
+-- }
 
 cmp.setup {
 	snippet = {
@@ -72,10 +70,17 @@ cmp.setup {
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
-		["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		-- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		-- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		["<C-Space>"] = cmp.mapping({
+			i = function()
+				if not cmp.visible() then
+					cmp.complete()
+				end
+			end
+		}),
 		["<C-e>"] = cmp.mapping({
 		 	i = cmp.mapping.abort(),
 		 	c = cmp.mapping.close(),

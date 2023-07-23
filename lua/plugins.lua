@@ -4,6 +4,8 @@ return {
 	'bluz71/vim-moonfly-colors',
 	'Shatur/neovim-ayu',
 	'ellisonleao/gruvbox.nvim',
+	'lurst/austere.vim',
+	'navarasu/onedark.nvim',
 
 	'neovim/nvim-lspconfig',
 	{
@@ -16,7 +18,7 @@ return {
 		'hrsh7th/nvim-cmp',
 		dependencies = {
 			'onsails/lspkind.nvim',
-	
+
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-cmdline',

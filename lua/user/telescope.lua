@@ -2,9 +2,9 @@ local telescope = require 'telescope'
 local actions = require 'telescope.actions'
 
 local ignore = {
-	'^bin$',
-	'^build$',
-	'^target$'
+	'^bin/',
+	'^build/',
+	'^target/'
 }
 
 telescope.setup {

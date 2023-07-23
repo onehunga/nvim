@@ -6,10 +6,11 @@ mason_lspconfig.setup {}
 
 mason_lspconfig.setup_handlers {
 	function(server_name)
-		local opts = {
-			on_attach = require 'lsp.handlers'.on_attach,
-			capabilities = require 'lsp.handlers'.capabilities
-		}
+		local opts = {}
+
+		if server_name == 'lua_ls' then
+			opts = require 'lsp.configs.lua'
+		end
 
 		require('lspconfig')[server_name].setup(opts)
 	end
