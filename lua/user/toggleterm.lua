@@ -19,7 +19,7 @@ toggleterm.setup {
 }
 
 local Terminal = require 'toggleterm.terminal'.Terminal
-local lazygit = Terminal:new({cmd = 'lazygit', hidden = true})
+local lazygit = Terminal:new({cmd = 'gitui', hidden = true})
 
 function _Lazygit_toggle()
 	lazygit:toggle(20, 'float')

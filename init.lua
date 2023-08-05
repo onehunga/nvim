@@ -27,4 +27,4 @@ vim.api.nvim_create_autocmd('BufEnter', {
 	end
 })
 
-vim.cmd [[ colorscheme gruvbox ]]
+vim.cmd [[ colorscheme rose-pine ]]

@@ -6,6 +6,8 @@ return {
 	'ellisonleao/gruvbox.nvim',
 	'lurst/austere.vim',
 	'navarasu/onedark.nvim',
+	'catppuccin/nvim',
+	'rose-pine/neovim',
 
 	'neovim/nvim-lspconfig',
 	{
@@ -68,12 +70,15 @@ return {
 		end
 	},
 	{
-		'kyazdani42/nvim-tree.lua',
+		'nvim-neo-tree/neo-tree.nvim',
+		branch = 'v3.x',
 		dependencies = {
-			'nvim-tree/nvim-web-devicons'
+			'nvim-lua/plenary.nvim',
+			'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+			'MunifTanjim/nui.nvim',
 		},
 		config = function()
-			require 'user.nvimtree'
+			require 'user.neotree'
 		end
 	},
 	{
@@ -117,6 +122,13 @@ return {
 		end
 	},
 
-	'ollykel/v-vim',
 	'Tetralux/odin.vim',
+	'ollykel/v-vim',
+
+	{
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require 'gitsigns'.setup()
+		end
+	}
 }
