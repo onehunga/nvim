@@ -5,61 +5,61 @@ local luasnip = require 'luasnip'
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
-local kind_icons = {
-	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
-	Field = "ﰠ",
-	Variable = "",
-	Class = "",
-	Interface = "",
-	Module = "",
-	Property = "",
-	Unit = "",
-	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "פּ",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
-}
-
 -- local kind_icons = {
--- 	Text = '  ',
--- 	Method = '  ',
--- 	Function = '  ',
--- 	Constructor = '  ',
--- 	Field = '  ',
--- 	Variable = '  ',
--- 	Class = '  ',
--- 	Interface = '  ',
--- 	Module = '  ',
--- 	Property = '  ',
--- 	Unit = '  ',
--- 	Value = '  ',
--- 	Enum = '  ',
--- 	Keyword = '  ',
--- 	Snippet = '  ',
--- 	Color = '  ',
--- 	File = '  ',
--- 	Reference = '  ',
--- 	Folder = '  ',
--- 	EnumMember = '  ',
--- 	Constant = '  ',
--- 	Struct = '  ',
--- 	Event = '  ',
--- 	Operator = '  ',
--- 	TypeParameter = '  ',
+-- 	Text = "",
+-- 	Method = "",
+-- 	Function = "",
+-- 	Constructor = "",
+-- 	Field = "ﰠ",
+-- 	Variable = "",
+-- 	Class = "",
+-- 	Interface = "",
+-- 	Module = "",
+-- 	Property = "",
+-- 	Unit = "",
+-- 	Value = "",
+-- 	Enum = "",
+-- 	Keyword = "",
+-- 	Snippet = "",
+-- 	Color = "",
+-- 	File = "",
+-- 	Reference = "",
+-- 	Folder = "",
+-- 	EnumMember = "",
+-- 	Constant = "",
+-- 	Struct = "פּ",
+-- 	Event = "",
+-- 	Operator = "",
+-- 	TypeParameter = "",
 -- }
+
+local kind_icons = {
+	Text = '  ',
+	Method = '  ',
+	Function = '  ',
+	Constructor = '  ',
+	Field = '  ',
+	Variable = '  ',
+	Class = '  ',
+	Interface = '  ',
+	Module = '  ',
+	Property = '  ',
+	Unit = '  ',
+	Value = '  ',
+	Enum = '  ',
+	Keyword = '  ',
+	Snippet = '  ',
+	Color = '  ',
+	File = '  ',
+	Reference = '  ',
+	Folder = '  ',
+	EnumMember = '  ',
+	Constant = '  ',
+	Struct = '  ',
+	Event = '  ',
+	Operator = '  ',
+	TypeParameter = '  ',
+}
 
 cmp.setup {
 	snippet = {
@@ -91,20 +91,20 @@ cmp.setup {
 
 	},
 	formatting = {
-		-- fields = { "kind", "abbr", "menu" },
-		-- format = function(entry, vim_item)
-		-- 	local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-		-- 	local strings = vim.split(kind.kind, "%s", { trimempty = true })
-		-- 	kind.kind = " " .. strings[1] .. " "
-		-- 	kind.menu = "    (" .. strings[2] .. ")"
-
-		-- 	return kind
-		-- end,
-		fields = { "abbr", "kind" },
+		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
-			vim_item.kind = (kind_icons[vim_item.kind] or '') -- .. ' ' .. vim_item.kind
-			return vim_item
-		end
+			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. strings[1] .. " "
+			kind.menu = "    (" .. strings[2] .. ")"
+
+			return kind
+		end,
+		-- fields = { "abbr", "kind", "menu" },
+		-- format = function(entry, vim_item)
+		-- 	vim_item.kind = (kind_icons[vim_item.kind] or '') -- .. ' ' .. vim_item.kind
+		-- 	return vim_item
+		-- end
 	},
 	sources = {
 		{ name = "nvim_lsp" },
@@ -137,4 +137,3 @@ cmp.setup {
 		}
 	}
 }
-

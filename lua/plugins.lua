@@ -8,6 +8,8 @@ return {
 	'navarasu/onedark.nvim',
 	'catppuccin/nvim',
 	'rose-pine/neovim',
+	'folke/tokyonight.nvim',
+	'blazkowolf/gruber-darker.nvim',
 
 	'neovim/nvim-lspconfig',
 	{
@@ -84,7 +86,7 @@ return {
 	{
 		'nvim-lualine/lualine.nvim',
 		config = function()
-			require 'user.lualine_evil'
+			require 'user.lualine'
 		end
 	},
 	{
