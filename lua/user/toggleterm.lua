@@ -7,7 +7,7 @@ toggleterm.setup {
 	start_in_insert = true,
 	insert_mappings = true,
 	-- direction = 'vertical',
-	shell = 'bash',
+	shell = 'fish',
 	direction = 'float',
 	float_opts = {
 		border = 'curved',

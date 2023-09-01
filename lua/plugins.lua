@@ -10,6 +10,7 @@ return {
 	'rose-pine/neovim',
 	'folke/tokyonight.nvim',
 	'blazkowolf/gruber-darker.nvim',
+	'Yazeed1s/oh-lucy.nvim',
 
 	'neovim/nvim-lspconfig',
 	{
@@ -112,6 +113,7 @@ return {
 	},
 	{
 		'j-hui/fidget.nvim',
+		branch = 'legacy',
 		config = function()
 			require 'fidget'.setup {}
 		end
@@ -126,11 +128,18 @@ return {
 
 	'Tetralux/odin.vim',
 	'ollykel/v-vim',
+	'https://git.sr.ht/~sircmpwn/hare.vim',
 
 	{
 		'lewis6991/gitsigns.nvim',
 		config = function()
 			require 'gitsigns'.setup()
 		end
-	}
+	},
+	{
+		'andweeb/presence.nvim',
+		config = function()
+			require 'presence'.setup {}
+		end
+	},
 }

@@ -27,4 +27,9 @@ vim.api.nvim_create_autocmd('BufEnter', {
 	end
 })
 
-vim.cmd [[ colorscheme rose-pine ]]
+vim.cmd [[ colorscheme ayu ]]
+
+if vim.g.neovide then
+	vim.g.neovide_scrool_animation_length = 0.2
+	vim.g.neovide_hide_mouse_when_typing = true
+end
