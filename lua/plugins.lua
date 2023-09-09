@@ -11,6 +11,7 @@ return {
 	'folke/tokyonight.nvim',
 	'blazkowolf/gruber-darker.nvim',
 	'Yazeed1s/oh-lucy.nvim',
+	'JoosepAlviste/palenightfall.nvim',
 
 	'neovim/nvim-lspconfig',
 	{
