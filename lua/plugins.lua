@@ -1,17 +1,11 @@
 return {
-	'rebelot/kanagawa.nvim',
-	'Mofiqul/adwaita.nvim',
-	'bluz71/vim-moonfly-colors',
-	'Shatur/neovim-ayu',
-	'ellisonleao/gruvbox.nvim',
-	'lurst/austere.vim',
-	'navarasu/onedark.nvim',
-	'catppuccin/nvim',
-	'rose-pine/neovim',
-	'folke/tokyonight.nvim',
-	'blazkowolf/gruber-darker.nvim',
-	'Yazeed1s/oh-lucy.nvim',
+	-- debugging
+	'mfussenegger/nvim-dap',
+	'rcarriga/nvim-dap-ui',
+	'theHamsta/nvim-dap-virtual-text',
+	'nvim-telescope/telescope-dap.nvim',
 
+	-- lsp
 	'neovim/nvim-lspconfig',
 	{
 		'williamboman/mason.nvim',
@@ -19,6 +13,8 @@ return {
 			'williamboman/mason-lspconfig.nvim'
 		}
 	},
+
+	-- completion
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
@@ -84,12 +80,12 @@ return {
 			require 'user.neotree'
 		end
 	},
-	{
-		'nvim-lualine/lualine.nvim',
-		config = function()
-			require 'user.lualine'
-		end
-	},
+	-- {
+	-- 	'nvim-lualine/lualine.nvim',
+	-- 	config = function()
+	-- 		require 'user.lualine'
+	-- 	end
+	-- },
 	{
 		'numToStr/Comment.nvim',
 		config = function()
@@ -136,10 +132,17 @@ return {
 			require 'gitsigns'.setup()
 		end
 	},
-	{
-		'andweeb/presence.nvim',
-		config = function()
-			require 'presence'.setup {}
-		end
-	},
+
+	'rebelot/kanagawa.nvim',
+	'Mofiqul/adwaita.nvim',
+	'bluz71/vim-moonfly-colors',
+	'Shatur/neovim-ayu',
+	'ellisonleao/gruvbox.nvim',
+	'lurst/austere.vim',
+	'navarasu/onedark.nvim',
+	'catppuccin/nvim',
+	'rose-pine/neovim',
+	'folke/tokyonight.nvim',
+	'blazkowolf/gruber-darker.nvim',
+	'Yazeed1s/oh-lucy.nvim',
 }

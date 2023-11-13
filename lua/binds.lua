@@ -24,6 +24,18 @@ bind('<C-f>', ':Telescope find_files<cr>')
 bind('<leader>g', '<cmd>lua _Lazygit_toggle()<cr>')
 bind('<leader>a', '<cmd>CodeActionMenu<cr>')
 
+--debugging
+keymap('n', '<F5>', ":lua require'dap'.continue()<CR>", opts)
+keymap('n', '<F10>', ":lua require'dap'.step_over()<CR>", opts)
+keymap('n', '<F11>', ":lua require'dap'.step_into()<CR>", opts)
+keymap('n', '<F12>', ":lua require'dap'.step_out()<CR>", opts)
+keymap('n', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap('n', '<leader>B', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>", opts)
+keymap('n', '<leader>lp', ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap('n', '<leader>dr', ":lua require'dap'.repl.open()<CR>", opts)
+-- keymap('n', '<leader>dt', "<cmd>DapUIToggle<CR>", opts)
+keymap('n', '<leader>dt', ":lua require 'dapui'.toggle()<CR>", opts)
+
 function _Toggle_linewise()
 	require 'Comment.api'.toggle.linewise()
 end

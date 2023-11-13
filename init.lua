@@ -19,6 +19,8 @@ require 'lsp'
 require 'opts'
 require 'binds'
 
+require 'user.dap'
+
 -- global status bar
 vim.api.nvim_create_autocmd('BufEnter', {
 	callback = function()
@@ -27,7 +29,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 	end
 })
 
-vim.cmd [[ colorscheme ayu ]]
+vim.cmd [[ colorscheme gruber-darker ]]
 
 if vim.g.neovide then
 	vim.g.neovide_scrool_animation_length = 0.2
