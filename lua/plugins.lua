@@ -80,12 +80,13 @@ return {
 			require 'user.neotree'
 		end
 	},
-	-- {
-	-- 	'nvim-lualine/lualine.nvim',
-	-- 	config = function()
-	-- 		require 'user.lualine'
-	-- 	end
-	-- },
+	{
+		'nvim-lualine/lualine.nvim',
+		config = function()
+			require 'user.lualine'
+			-- require 'user.lualine_evil'
+		end
+	},
 	{
 		'numToStr/Comment.nvim',
 		config = function()
@@ -125,6 +126,12 @@ return {
 	'Tetralux/odin.vim',
 	'ollykel/v-vim',
 	'https://git.sr.ht/~sircmpwn/hare.vim',
+	{
+		'simrat39/rust-tools.nvim',
+		config = function()
+			require 'user.rust'
+		end
+	},
 
 	{
 		'lewis6991/gitsigns.nvim',
@@ -145,4 +152,14 @@ return {
 	'folke/tokyonight.nvim',
 	'blazkowolf/gruber-darker.nvim',
 	'Yazeed1s/oh-lucy.nvim',
+	'RRethy/nvim-base16',
+	'ribru17/bamboo.nvim',
+	'tiagovla/tokyodark.nvim',
+	{
+		'rockyzhang24/arctic.nvim',
+		branch = 'v2',
+		dependencies = {
+			'rktjmp/lush.nvim',
+		},
+	},
 }
