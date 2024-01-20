@@ -45,7 +45,9 @@ return {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require 'nvim-treesitter.configs'.setup {
-				highlight = true
+				highlight = {
+					enabled = true
+				},
 			}
 		end
 	},
@@ -83,8 +85,8 @@ return {
 	{
 		'nvim-lualine/lualine.nvim',
 		config = function()
-			require 'user.lualine'
-			-- require 'user.lualine_evil'
+			-- require 'user.lualine'
+			require 'user.lualine_evil'
 		end
 	},
 	{

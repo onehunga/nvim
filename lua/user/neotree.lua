@@ -5,6 +5,6 @@ neotree.setup {
 	popup_border_style = 'rounded',
 
 	window = {
-		position = 'left'
+		position = 'float'
 	}
 }

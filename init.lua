@@ -32,6 +32,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 vim.cmd [[ colorscheme ayu ]]
 vim.cmd [[ colorscheme arctic ]]
 vim.cmd [[ colorscheme tokyodark ]]
+vim.cmd [[ colorscheme gruber-darker ]]
 
 if vim.g.neovide then
 	vim.g.neovide_scrool_animation_length = 0.2
