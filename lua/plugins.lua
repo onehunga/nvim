@@ -5,6 +5,14 @@ return {
 	'theHamsta/nvim-dap-virtual-text',
 	'nvim-telescope/telescope-dap.nvim',
 
+	{
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require 'user.gitsigns'
+		end
+	},
+
+
 	-- lsp
 	'neovim/nvim-lspconfig',
 	{
@@ -82,11 +90,23 @@ return {
 			require 'user.neotree'
 		end
 	},
+	-- {
+	-- 	'nvim-lualine/lualine.nvim',
+	-- 	config = function()
+	-- 		-- require 'user.lualine'
+	-- 		require 'user.lualine_evil'
+	-- 	end
+	-- },
 	{
-		'nvim-lualine/lualine.nvim',
+		'rebelot/heirline.nvim',
 		config = function()
-			-- require 'user.lualine'
-			require 'user.lualine_evil'
+			require 'user.heirline'
+		end
+	},
+	{
+		'SmiteshP/nvim-navic',
+		config = function ()
+			require 'user.navic'
 		end
 	},
 	{
@@ -95,14 +115,14 @@ return {
 			require 'Comment'.setup()
 		end
 	},
-	{
-		'akinsho/bufferline.nvim',
-		version = "*",
-		dependencies = 'nvim-tree/nvim-web-devicons',
-		config = function()
-			require 'user.bufferline'
-		end
-	},
+	-- {
+	-- 	'akinsho/bufferline.nvim',
+	-- 	version = "*",
+	-- 	dependencies = 'nvim-tree/nvim-web-devicons',
+	-- 	config = function()
+	-- 		require 'user.bufferline'
+	-- 	end
+	-- },
 	{
 		'folke/which-key.nvim',
 		config = function()
@@ -135,13 +155,6 @@ return {
 		end
 	},
 
-	{
-		'lewis6991/gitsigns.nvim',
-		config = function()
-			require 'gitsigns'.setup()
-		end
-	},
-
 	'rebelot/kanagawa.nvim',
 	'Mofiqul/adwaita.nvim',
 	'bluz71/vim-moonfly-colors',
@@ -157,6 +170,8 @@ return {
 	'RRethy/nvim-base16',
 	'ribru17/bamboo.nvim',
 	'tiagovla/tokyodark.nvim',
+	'savq/melange-nvim',
+	'ajmwagar/vim-deus',
 	{
 		'rockyzhang24/arctic.nvim',
 		branch = 'v2',

@@ -1,20 +1,7 @@
-local lspconfig = require 'lspconfig'
-
-local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
-}
-
-for _, sign in ipairs(signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
-
 local config = {
 	virtual_text = true,
 	signs = {
-		active = signs,
+		active = require 'ucore.icons'.signs,
 	},
 	update_in_insert = true,
 	underline = true,
@@ -39,7 +26,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 	border = "rounded",
 })
 
--- function M.on_attach(client, bufnr)
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	callback = function(ev)

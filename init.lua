@@ -11,6 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 
+require 'ucore.icons'.setup()
 vim.opt.rtp:prepend(lazypath)
 
 require 'lazy'.setup(require 'plugins')
@@ -29,10 +30,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 	end
 })
 
-vim.cmd [[ colorscheme ayu ]]
-vim.cmd [[ colorscheme arctic ]]
-vim.cmd [[ colorscheme tokyodark ]]
-vim.cmd [[ colorscheme gruber-darker ]]
+vim.cmd [[ colorscheme gruvbox ]]
 
 if vim.g.neovide then
 	vim.g.neovide_scrool_animation_length = 0.2
