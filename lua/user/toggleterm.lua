@@ -6,7 +6,6 @@ toggleterm.setup {
 	hide_numbers = true,
 	start_in_insert = true,
 	insert_mappings = true,
-	-- direction = 'vertical',
 	shell = 'fish',
 	direction = 'float',
 	float_opts = {
@@ -20,8 +19,12 @@ toggleterm.setup {
 
 local Terminal = require 'toggleterm.terminal'.Terminal
 local lazygit = Terminal:new({cmd = 'gitui', hidden = true})
+local vertical = Terminal:new({cmd = 'zsh'})
 
 function _Lazygit_toggle()
 	lazygit:toggle(20, 'float')
 end
 
+function _VerticalTermToggle()
+	vertical:toggle(50, 'vertical')
+end

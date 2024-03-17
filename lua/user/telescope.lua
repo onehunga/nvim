@@ -11,7 +11,8 @@ telescope.setup {
 	defaults = {
 		mappings = {
 			i = {
-				['<C-f>'] = actions.close
+				['<C-f>'] = actions.close,
+				['<esc>'] = actions.close,
 			}
 		},
 		file_ignore_patterns = ignore,

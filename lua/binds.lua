@@ -1,3 +1,4 @@
+local wk = require 'which-key'
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
@@ -16,10 +17,6 @@ bind('<C-e>', ':Neotree<cr>')
 ibind('<A-,>', ':BufferLineCyclePrev<cr>')
 ibind('<A-.>', ':BufferLineCycleNext<cr>')
 bind('<A-q>', ':bw<cr>')
-bind('<leader>ff', ':Telescope find_files<cr>')
-bind('<leader>fg', ':Telescope live_grep<cr>')
-bind('<leader>fw', ':Telescope lsp_dynamic_workspace_symbols<cr>')
-bind('<leader>b', ':Telescope buffers<cr>')
 bind('<C-f>', ':Telescope find_files<cr>')
 bind('<leader>g', '<cmd>lua _Lazygit_toggle()<cr>')
 bind('<leader>a', '<cmd>CodeActionMenu<cr>')
@@ -51,3 +48,22 @@ end
 
 ibind('<C-c>', '<cmd> lua _Toggle_linewise()<cr>')
 keymap('x', '<C-c>', '<cmd>lua _Toggle_selection()<cr>', opts)
+
+wk.register({
+	f = {
+		name = 'find',
+		f = { ':Telescope find_files<CR>', 'find files in cwd' },
+		g = { ':Telescope live_grep<CR>', 'live grep in cwd' },
+		w = { ':Telescope lsp_dynamic_workspace_symbols<CR>', 'find symbols across the workspace' },
+		d = { ':Telescope lsp_document_symbols<CR>', 'find symbols in document'},
+	},
+	b = {
+		name = 'buffers',
+		b = { ':Telescope buffers<CR>', 'list all open buffers' },
+	},
+	t = {
+		name = 'terminal',
+		t = { ':ToggleTerm<CR>', 'open a floating terminal' },
+		v = { '<cmd>lua _VerticalTermToggle()<CR>', 'open a vertical terminal' }
+	}
+}, { prefix = '<leader>' })

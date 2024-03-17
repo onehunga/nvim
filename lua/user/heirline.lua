@@ -194,7 +194,9 @@ local Diagnostics = {
 }
 
 local Navic = {
-    condition = function() return require("nvim-navic").is_available() end,
+    condition = function()
+		return require("nvim-navic").is_available()
+	end,
     static = {
         -- create a type highlight map
         type_hl = {
@@ -443,19 +445,24 @@ local WorkDir = {
     }
 }
 
-ViMode = utils.surround({ "", "" }, "bright_bg", {
+ViMode = utils.surround({ " ", "" }, "bright_bg", {
 	ViMode,
 	-- Snippet
 })
 
 local Align = { provider = "%=" }
-local Space = { provider = " " }
+local Space = {
+	provider = " ",
+	hl = "bright_bg"
+}
+
+local bar = { Space,  }
+
+Lhs = utils.surround({ "  ", "" }, "bright_bg", { WorkDir, Space, FileNameBlock, Space, Git, Space, Diagnostics })
+Rhs = utils.surround({ "", "  "}, "bright_bg", { LSPActive, Space, ScrollBar })
+S = utils.surround({"", ""}, "none", { Align })
 
 require 'heirline'.setup {
 	winbar = { Navic },
-	statusline = {
-		ViMode, Space, WorkDir, FileNameBlock, Space, Git, Space, Diagnostics, Align,
-		LSPActive, Align,
-		ScrollBar
-	}
+	statusline = {ViMode, S, Lhs, S, Rhs}
 }

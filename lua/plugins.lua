@@ -93,8 +93,8 @@ return {
 	-- {
 	-- 	'nvim-lualine/lualine.nvim',
 	-- 	config = function()
-	-- 		-- require 'user.lualine'
-	-- 		require 'user.lualine_evil'
+	-- 		require 'user.lualine'
+	-- 		-- require 'user.lualine_evil'
 	-- 	end
 	-- },
 	{
@@ -115,16 +115,21 @@ return {
 			require 'Comment'.setup()
 		end
 	},
-	-- {
-	-- 	'akinsho/bufferline.nvim',
-	-- 	version = "*",
-	-- 	dependencies = 'nvim-tree/nvim-web-devicons',
-	-- 	config = function()
-	-- 		require 'user.bufferline'
-	-- 	end
-	-- },
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function()
+			require 'user.bufferline'
+		end
+	},
 	{
 		'folke/which-key.nvim',
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
 		config = function()
 			local wk = require 'which-key'
 			wk.setup()
@@ -145,14 +150,49 @@ return {
 		end
 	},
 
-	'Tetralux/odin.vim',
-	'ollykel/v-vim',
-	'https://git.sr.ht/~sircmpwn/hare.vim',
+	{
+		'echasnovski/mini.nvim',
+		config = function ()
+			require 'user.mini'
+		end
+	},
+
+	{
+		"ray-x/go.nvim",
+		dependencies = {  -- optional packages
+			"ray-x/guihua.lua",
+			"neovim/nvim-lspconfig",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("user.go")
+		end,
+		event = {"CmdlineEnter"},
+		ft = {"go", 'gomod'},
+		build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+	},
+	{
+		'Tetralux/odin.vim',
+		event = {"CmdlineEnter"},
+		ft = {"odin"},
+	},
+	{
+		'https://git.sr.ht/~sircmpwn/hare.vim',
+		event = {"CmdlineEnter"},
+		ft = {"hare"},
+	},
+	{
+		'gleam-lang/gleam.vim',
+		event = { "CmdlineEnter" },
+		ft = "gleam",
+	},
 	{
 		'simrat39/rust-tools.nvim',
 		config = function()
 			require 'user.rust'
-		end
+		end,
+		event = {"CmdlineEnter"},
+		ft = {"rust"},
 	},
 
 	'rebelot/kanagawa.nvim',
@@ -172,6 +212,13 @@ return {
 	'tiagovla/tokyodark.nvim',
 	'savq/melange-nvim',
 	'ajmwagar/vim-deus',
+
+	{
+		'CrispyBaccoon/evergarden',
+		config = function ()
+			require 'user.themes.evergarden'
+		end
+	},
 	{
 		'rockyzhang24/arctic.nvim',
 		branch = 'v2',
